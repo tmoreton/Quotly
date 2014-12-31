@@ -57,7 +57,7 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">"Life isn’t about getting and having, it’s about giving and being."</h1>
-            <p class="lead">– Kevin Kruse</p>
+<!--             <p class="lead">– Kevin Kruse</p> -->
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default">Past Quotes</a>
             </p>
@@ -85,12 +85,13 @@
     <script src="../../assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines!
+        [if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <script src="/js/quot_ly.js.css"></script>
 
         <script type="text/javascript">
+        // <!--Digital clock and date function -->
             tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
             tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
 
@@ -106,13 +107,42 @@
               if(nyear<1000) nyear+=1900;
               if(nmin<=9) nmin="0"+nmin;
 
-            document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+ap+"";
+            document.getElementById('clockbox').innerHTML=""+tday[nday]+",  "+tmonth[nmonth]+"  "+ndate+",  "+nyear+"  "+nhour+":"+nmin+ap+"";
             }
 
             window.onload=function(){
               GetClock();
               setInterval(GetClock,1000);
             }
+
+        // onclick changing quote and background-color
+        var quotes = [
+"Resolve and thou art free. -Henry Wadsworth Longfellow", 
+"To love abundantly is to live abundantly, and to love forever is to live forever. -Henry Drummond", 
+"Time and memory are true artists; they remould reality nearer to the heart's desire. -John Dewey"
+]
+
+        var fonts = [
+"'Clicker Script', cursive",
+"'News Cycle', sans-serif",
+"'Vesper Libre', serif",
+"'Rubik Mono One', sans-serif",
+"'Titan One', cursive",
+"'Averia Libre', cursive",
+"'Cinzel', serif",
+"'Gruppo', cursive"
+]
+
+        $(document).ready(function () {  
+          $(".btn").click(function() {
+            var random_color = '#'+Math.floor(Math.random()*16777215).toString(16);
+            var random_quote = quotes[Math.floor(Math.random()*quotes.length)];
+            var random_font = fonts[Math.floor(Math.random()*fonts.length)];
+            $('body').css('background-color', random_color); 
+            $('p, h1, #clockbox, .cover-heading').css('font-family', random_font);
+            $('.cover-heading').html("<h1>" + random_quote + "</h1>"); 
+          });
+        });
         </script>
   </body>
 </html>
