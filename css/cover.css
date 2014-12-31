@@ -46,16 +46,8 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
-h1, p, #clockbox {
+h1, p, #clockbox, .quote {
   font-family: 'Clicker Script', cursive;
-  font-family: 'News Cycle', sans-serif;
-  font-family: 'Vesper Libre', serif;
-  font-family: 'Faster One', cursive;
-  font-family: 'Rubik Mono One', sans-serif;
-  font-family: 'Titan One', cursive;
-  font-family: 'Averia Libre', cursive;
-  font-family: 'Cinzel', serif;
-  font-family: 'Gruppo', cursive;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */

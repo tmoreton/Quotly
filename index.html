@@ -22,7 +22,7 @@
     <link href="css/cover.css" rel="stylesheet">
 
     <!-- Google Web fonts -->
-    <link href='http://fonts.googleapis.com/css?family=News+Cycle|Clicker+Script|Vesper+Libre|Faster+One|Rubik+Mono+One|Titan+One|Averia+Libre|Cinzel|Gruppo' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis|Crafty+Girls|Cabin|Poiret+One|Quicksand|Josefin+Sans|Lobster|Waiting+for+the+Sunrise|Shadows+Into+Light|Gloria+Hallelujah|Pacifico|Jura|Amatic+SC|Special+Elite|Dancing+Script|Courgette|Shadows+Into+Light+Two|Play|Open+Sans|Open+Sans+Condensed:300|Cookie|Indie+Flower|Alegreya|Pinyon+Script|Bangers|Raleway|Slabo+27px|Playball|Kaushan+Script' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -53,10 +53,10 @@
 
 
           
-          <h2><div id="clockbox"></div></h2>
+          <h3><div id="clockbox"></div></h3>
 
           <div class="inner cover">
-            <h1 class="cover-heading">"Life isn’t about getting and having, it’s about giving and being."</h1>
+            <h2 class="quote">"Life isn’t about getting and having, it’s about giving and being."</h2>
 <!--             <p class="lead">– Kevin Kruse</p> -->
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default">Past Quotes</a>
@@ -117,30 +117,70 @@
 
         // onclick changing quote and background-color
         var quotes = [
-"Resolve and thou art free. -Henry Wadsworth Longfellow", 
-"To love abundantly is to live abundantly, and to love forever is to live forever. -Henry Drummond", 
-"Time and memory are true artists; they remould reality nearer to the heart's desire. -John Dewey"
+"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.  -Helen Keller", 
+"Perfection is not attainable, but if we chase perfection we can catch excellence.  -Vince Lombardi", 
+"I can't change the direction of the wind, but I can adjust my sails to always reach my destination.  -Jimmy Dean",
+"Nothing is impossible, the word itself says 'I'm possible'!  -Audrey Hepburn",
+"The measure of who we are is what we do with what we have.  -Vince Lombardi",
+"Put your heart, mind, and soul into even your smallest acts. This is the secret of success.  -Swami Sivananda",
+"Try to be a rainbow in someone's cloud.  -Maya Angelou",
+"We know what we are, but know not what we may be.  -William Shakespeare",
+"As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.  -John F. Kennedy",
+"Change your thoughts and you change your world.  -Norman Vincent Peale",
+"Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.  -Francis of Assisi",
+"It is during our darkest moments that we must focus to see the light.  -Aristotle Onassis",
+"Out of difficulties grow miracles.  -Jean de la Bruyere",
+"Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.  -Buddha",
+"Believe you can and you're halfway there.  -Theodore Roosevelt",
+"We can't help everyone, but everyone can help someone.  -Ronald Reagan",
+"Your big opportunity may be right where you are now.  -Napoleon Hill",
+"Whoever is happy will make others happy too.  -Anne Frank",
+"When the sun is shining I can do anything; no mountain is too high, no trouble too difficult to overcome.  -Wilma Rudolph",
+"I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.'  -Muhammad Ali"
 ]
 
         var fonts = [
-"'Clicker Script', cursive",
-"'News Cycle', sans-serif",
-"'Vesper Libre', serif",
-"'Rubik Mono One', sans-serif",
-"'Titan One', cursive",
-"'Averia Libre', cursive",
-"'Cinzel', serif",
-"'Gruppo', cursive"
+"'Dosis', sans-serif",
+"'Crafty Girls', cursive",
+"'Cabin', sans-serif",
+"'Poiret One', cursive",
+"'Quicksand', sans-serif",
+"'Josefin Sans', sans-serif",
+"'Lobster', cursive",
+"'Waiting for the Sunrise', cursive",
+"'Shadows Into Light', cursive",
+"'Gloria Hallelujah', cursive",
+"'Pacifico', cursive",
+"'Jura', sans-serif",
+"'Amatic SC', cursive",
+"'Special Elite', cursive",
+"'Dancing Script', cursive",
+"'Courgette', cursive",
+"'Shadows Into Light Two', cursive",
+"'Play', sans-serif",
+"'Open Sans', sans-serif",
+"'Open Sans Condensed', sans-serif",
+"'Cookie', cursive",
+"'Indie Flower', cursive",
+"'Alegreya', serif",
+"'Pinyon Script', cursive",
+"'Bangers', cursive",
+"'Raleway', sans-serif",
+"'Slabo 27px', serif",
+"'Playball', cursive",
+"'Kaushan Script', cursive",
 ]
-
+        var used_quotes= [];
         $(document).ready(function () {  
           $(".btn").click(function() {
             var random_color = '#'+Math.floor(Math.random()*16777215).toString(16);
-            var random_quote = quotes[Math.floor(Math.random()*quotes.length)];
+            var random_num = Math.floor(Math.random()*quotes.length);
+            var random_quote = quotes[random_num];
+            used_quotes.push(quotes.pop(quotes[random_num]));
             var random_font = fonts[Math.floor(Math.random()*fonts.length)];
             $('body').css('background-color', random_color); 
-            $('p, h1, #clockbox, .cover-heading').css('font-family', random_font);
-            $('.cover-heading').html("<h1>" + random_quote + "</h1>"); 
+            $('h1,p,#clockbox,h2,h3').css('font-family', random_font);
+            $('h2').html("<h2>" + random_quote + "</h2>"); 
           });
         });
         </script>
