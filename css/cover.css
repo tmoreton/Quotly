@@ -10,6 +10,7 @@ a:hover {
 }
 
 /* Custom default button */
+.btn,
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
@@ -17,6 +18,7 @@ a:hover {
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
+  margin-top: 50px;
 }
 
 .inner {
@@ -37,7 +39,7 @@ body {
 }
 
 #clockbox {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 body {
@@ -50,6 +52,10 @@ h1, p, #clockbox, .quote {
   font-family: 'Clicker Script', cursive;
 }
 
+h2 {
+  font-weight: bold;
+  font-size: 40px;
+}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
