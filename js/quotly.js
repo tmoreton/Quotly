@@ -1,29 +1,28 @@
-var csvFile = fs.readFileSync("quotes_fixed.csv","utf8");
-var csv_data = csvParse(csvFile)
-console.log(csv_data);
+// var fs = require('fs');
+// var csvFile = fs.readFileSync("quotes.csv","utf8");
+// var quote_array = csvParse(csvFile)
+// console.log(quote_array);
+
+// function csvParse(csvFile){
+//     var arrayOfObjects = [];
+//     var arr = csvFile.split("\n");
+//     var newObj;
+//     keys = arr.shift().split(",");
+//     arr.forEach(function(contact){
+//         contact = contact.split(",");
+//         newObj = {};
+//         for(var i =0; i < contact.length; i++){
+//             newObj[keys[i]] = contact[i];
+//         }
+//         arrayOfObjects.push(newObj);
+//     })
+//     return arrayOfObjects;
+// }
 
 function csvParse(csvFile){
-    var arrayOfObjects = [];
-    var arr = csvFile.split("\n");
-    var newObj;
- 
-    keys = arr.shift().split(",");
- 
-    arr.forEach(function(contact){
-        contact = contact.split(",");
-        newObj = {};
- 
-        for(var i =0; i < contact.length; i++){
-            newObj[keys[i]] = contact[i];
-        }
- 
-        arrayOfObjects.push(newObj);
- 
-    })
- 
-    return arrayOfObjects;
+  var quote_array = csvFile.split('\n');
+  return quote_array;
 }
-
 
 var quotes = [
 "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.  -Helen Keller", 
@@ -133,6 +132,6 @@ $(document).ready(function () {
       $('body').css('background-color', random_color); 
       $('h1,p,#clockbox,h2,h3').css('font-family', random_font);
       //$('h2').html("<h2>" + temp_quote + "</h2>");
-      document.getElementById('quote').innerHTML = used_quotes[-1];
+      document.getElementById('quote').innerHTML = random_quote;
     });
 });
